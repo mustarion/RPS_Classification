@@ -35,4 +35,18 @@ Setelah dilakuakn fine tuning pada model, model akan digabungkan dengan fully co
 
 ![Screenshot 2023-12-11 004818](https://github.com/mustarion/RPS_Classification/assets/132191412/8fee96d2-7a43-40ae-a973-4ff6080b487b)
 
+Setelah arsitektur machine learning dibuat, selanjutnyya adalah tahap pelatihan model. pada tahapan ini data dibangi menjadi 3 kategori yaitu data train, data test, dan juga data validation. setelah itu dilakukan pelatihan dengan data train sebagai bahan pelatihan dan data validation sebagai indikator penilaian. Pelatihan model dilakukan sebanyak 5 epoch  pelatihan yang dapat dilihat pada gamabr dibawah ini:
+
+![Screenshot 2023-12-11 090431](https://github.com/mustarion/RPS_Classification/assets/132191412/f5b9e801-ed60-46ab-9b29-1d367b9c6d52)
+
+Hasil dari pelatihan dapat dilihat pada graf berikut:
+
+![augmentasi](https://github.com/mustarion/RPS_Classification/assets/132191412/44d1c176-8794-4a72-95fd-7f5953bd9a1d)
+
+Dari pelatihan yang dilakukan dapat diliaht bahwa model yang dilatih memiliki masih memiliki gap dengan validation pada masing - masing parameter akurasi maupun loss, namun dari graf yang ditampilkan dapat disumsikan hanya dibutuhkan epoch yang lebih banyak agar gap antra parameter dengan validatationnya bisa semakin mengecil. 
+
+![Screenshot 2023-12-11 092712](https://github.com/mustarion/RPS_Classification/assets/132191412/aeaa5d6e-1942-41be-b854-269f7503509a)
+
+Dari penelitian yang dilaukan memberikan hasil akurasi sebesar 99.6%, hasil yang didapat menunjukkan bahwa model yang dilatih sudah cukup baik.
+
 
