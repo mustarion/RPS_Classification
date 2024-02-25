@@ -1,15 +1,27 @@
 # RPS_Classification
-Repositori ini berisikan project yang digunakan untuk penilaian penugasan dalam pembelajaran mesin, dalam project ini pelatihan model machine learning berupa pre trained model DenseNet-169 dilakukan dengan mengguanakan dataset RPS (Rock, Paper, Scissoros), dataset tersebut berisi 3 kategori kelas yaitu rock, paper, dan scissors dimana di dalam masing - masing kategori berisikan citra yang merepresentasikan postur rock, paper, scissors. Output yang diharapkan dari project ini merupakan machine learning yang dilatih dapat mengklasifikasikan apakah sebuah citra termasuk rock, paper, atau scissors.
+This project is intended for my assignment in my machine learning class. This project used Pre-Trained model DenseNet-169 and trained on the RPS (Read, Paper, Scissor) dataset to produce a model that can classify the Rock, Paper, and Scissors. 
 
-# Author
-Ulul Fikri - 202010370311278
+## Dataset
+Dataset being used in this project is based on " RPS (Read, Paper, Scissor) " dataset from https://www.kaggle.com/datasets/frtgnn/rock-paper-scissor. The dataset contain multiple categories such rock, paper, scissors with each categories contain of 840 images.
 
-# Overview
-Pada peroject machine learning yang dilakukan, model Densenet-169 digunakan dan dialatih dengan dataset yang ada.
+
+## Pre-Trained Model
+Pretrained model is machine learning model that has been trained on large scale dataset and can be fine-tuned for specfic task. in this project, DenseNet-169 is trained using the adjusment of trashnet dataset to provide classification result.
 
 <img width="600" alt="densenet121_spXhNmT" src="https://github.com/mustarion/RPS_Classification/assets/132191412/4eee1c4a-504d-4c0d-a004-e066d00548e8">
 
-DenseNet (Densely Connected Convolutional Networks) adalah arsitektur jaringan saraf konvolusional (CNN) yang dikembangkan untuk tugas penglihatan komputer. Konsep dasar DenseNet yaitu "densely connected"  memungkinkan setiap lapisan menerima input dari semua lapisan sebelumnya, memungkinkan informasi untuk mengalir lebih efisien melalui jaringan. DenseNet memiliki dua varian utama: DenseNet-121 dan DenseNet-169. DenseNet-169 secara umum dapat memberikan performa yang lebih baik daripada DenseNet-121, terutama pada tugas-tugas yang memerlukan representasi yang lebih dalam dan kompleks dari gambar. Namun, penggunaan DenseNet-169 juga dapat membutuhkan lebih banyak sumber daya komputasi.
+DenseNet (Densely Connected Convolutional Networks) is a convolutional neural network (CNN) architecture developed for computer vision tasks. The fundamental concept of DenseNet is "densely connected," allowing each layer to receive input from all previous layers, enabling information to flow more efficiently through the network. DenseNet has two main variants: DenseNet-121 and DenseNet-169. Generally, DenseNet-169 can provide better performance than DenseNet-121, especially in tasks requiring deeper and more complex image representations. However, the use of DenseNet-169 may also require more computational resources.
+
+## Evaluation
+To determind the quality of the conducted classification, several matriks evaluation are being used such:
+- accuracy
+- precision
+- recall
+- f1-score
+- support
+  
+Those evalutaioin matriks conducted in order to determine is the classification result considered good or still need to be improved.
+
 
 # Project Flow
 ## 1. Laod Dataset
