@@ -25,40 +25,52 @@ Those evalutaioin matriks conducted in order to determine is the classification 
 
 # Project Flow
 ## 1. Laod Dataset
-Pada tahapan ini, data yang diperoleh diload kedalam program. Berikut merupakan contoh dari masing - masing citra dalam setiap kategori dataset.
+For the first step, load dataset into the program. This is the example of the dataset being loaded:
 
 ![rps_citra](https://github.com/mustarion/RPS_Classification/assets/132191412/0e6a26f1-85af-4826-a2c7-5e213e0e5675)
 
 ## 2. Data Augmentation
-Data augmentasi dilakukan untuk mendapat lebih banyak data pada pelatihan yang akan dilakukan, data yang diproleh dari augmentasi yang dilakukan pada project ini bersifat sintetis dengan begitu jumlah data pada dataset tidak berubah. Adapun beberapa parameter dalam proses augmentasi yang dilakukan adalah: rescale=1./255, rotation_range=30, zoom_range=0.2, height_shift_range=0.2, horizontal_flip=True, fill_mode='nearest'. Hasil dari augmentasi dapat dilihat pada gambar dibawah:
+Augmentation is a method to increase the number of data in a dataset. This method works by synthetically enlarging the data inside the dataset, so the added data does not affect the actual number of data in the dataset. Some of the parameter being used in augmentation include: 
+-	rescale=1./255
+-	rotation_range=30
+-	zoom_range=0.2
+-	height_shift_range=0.2
+-	horizontal_flip=True
+-	fill_mode='nearest'
+the augmentation result can be seen down here:
 
 ![augmentasi](https://github.com/mustarion/RPS_Classification/assets/132191412/fe8de680-104c-465b-a204-98caab324380)
 
 ## 3. Machine learning Modeling
-Model yang digunakan pada project ini merupakan DenseNet-169. Berikut merupakan summery model dari DenseNet-169:
+In this step we construct the machine learning model architecture to be trained on the RPS dataset. The Pre-Trained model being used in this project is DenseNet-169. Here is the summary of the DenseNet-169 model’s:
 
 ![Screenshot 2023-12-11 002913](https://github.com/mustarion/RPS_Classification/assets/132191412/1f34d80f-f7b2-472f-881a-3f2f9d8f0b72)
 
-pada model tersebut, dilakukan fine tuning dengan melakukan unfreez pada 2 layer terakhir pada model, dengan begitu 2 layer terakhir akan ikut dilatih kembali. Berikut merupakan implementasi fine tuning pada model pre trained.
+The model used being fine toned with unfreezing 2 layers in the end of the model layers. Unfreezing 2 layers will make it trainable, so the layers can be trained with the new task which is training on the RPS dataset. The fine tuning proses result can be seen down here:
 
 ![Screenshot 2023-12-11 004356](https://github.com/mustarion/RPS_Classification/assets/132191412/f5ef86c8-bbc7-44b9-8ddd-9b941d3f801f)
 
-Setelah dilakuakn fine tuning pada model, model akan digabungkan dengan fully connected layer yang digunakan untuk memberikan hasil akhir klasifikasi machine learning yang dilakukan. Adapun beberapa layer dalam fully connected layer yang digunakan adalah, GlobalMaxPooling2D(), Dense(512, activation='relu'), Dropout(0.5), Dense(128, activation='relu'), Dropout(0.3), Dense(3, activation='softmax'). Adapun hasil akhir dari model yang digunakan setelah melalui preses fine tuning dan implementasi fully connected layer adalah sebagai berikut:
+After fine toned the model, the models being merge with fully connected layer. Fully connected layer are used to connect the learned representation with the desired output, usually this kind of layer are used in the end of the machine learning architecture model’s. the several layers in the fully connected layer used are:
+-	GlobalMaxPooling2D()
+-	Dense(512, activation='relu')
+-	Dropout(0.5)
+-	Dense(128, activation='relu')
+-	Dropout(0.3)
+-	Dense(3, activation='softmax')
+The final result of the machine learning architecture model being used can be seen down here as a summary model:
 
 ![Screenshot 2023-12-11 004818](https://github.com/mustarion/RPS_Classification/assets/132191412/8fee96d2-7a43-40ae-a973-4ff6080b487b)
 
-Setelah arsitektur machine learning dibuat, selanjutnyya adalah tahap pelatihan model. pada tahapan ini data dibangi menjadi 3 kategori yaitu data train, data test, dan juga data validation. setelah itu dilakukan pelatihan dengan data train sebagai bahan pelatihan dan data validation sebagai indikator penilaian. Pelatihan model dilakukan sebanyak 5 epoch  pelatihan yang dapat dilihat pada gamabr dibawah ini:
+The next step is training the model, the dataset (loaded data + augmented data) split into 3 sub dataset such as data train, data validation, and data test. the training process conducted by using data train as the training material and data test as the evaluation indicator. Training is conducted for a total 5 training epochs, as showing below:
 
 ![Screenshot 2023-12-11 090431](https://github.com/mustarion/RPS_Classification/assets/132191412/f5b9e801-ed60-46ab-9b29-1d367b9c6d52)
 
-Hasil dari pelatihan dapat dilihat pada graf berikut:
+The result can be seen down here:
 
 ![augmentasi](https://github.com/mustarion/RPS_Classification/assets/132191412/44d1c176-8794-4a72-95fd-7f5953bd9a1d)
 
-Dari pelatihan yang dilakukan dapat diliaht bahwa model yang dilatih memiliki masih memiliki gap dengan validation pada masing - masing parameter akurasi maupun loss, namun dari graf yang ditampilkan dapat disumsikan hanya dibutuhkan epoch yang lebih banyak agar gap antra parameter dengan validatationnya bisa semakin mengecil. 
-
 ![Screenshot 2023-12-11 092712](https://github.com/mustarion/RPS_Classification/assets/132191412/aeaa5d6e-1942-41be-b854-269f7503509a)
 
-Dari penelitian yang dilaukan memberikan hasil akurasi sebesar 99.6%, hasil yang didapat menunjukkan bahwa model yang dilatih sudah cukup baik.
+From the graph and result above, can be seen that the accuracy can reach up to 99%, but there is still a gap between the training result and validation both in the accuracy and the loss evaluation. That’s mean, the model still get overfitting even the accuracy of the model considered to be good.
 
 
