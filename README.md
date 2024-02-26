@@ -1,5 +1,5 @@
 # RPS_Classification
-This project is intended for my assignment in my machine learning class. This project used Pre-Trained model DenseNet-169 and trained on the RPS (Read, Paper, Scissor) dataset to produce a model that can classify the Rock, Paper, and Scissors. 
+This project is intended for my assignment in my machine learning class. This project used Pre-Trained model DenseNet-169 and trained on the RPS (Read, Paper, Scissor) dataset to produce a model that can classify the Rock, Paper, and Scissors image. 
 
 ## Dataset
 Dataset being used in this project is based on " RPS (Read, Paper, Scissor) " dataset from https://www.kaggle.com/datasets/frtgnn/rock-paper-scissor. The dataset contain multiple categories such rock, paper, scissors with each categories contain of 840 images.
